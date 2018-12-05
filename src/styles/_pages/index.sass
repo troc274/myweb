@@ -268,8 +268,34 @@
 		.owl-nav
 			margin-bottom: 2rem
 			button 
+				background: $main
+				+bor-rad(0)
 				i 
 					display: block
 					width: 2rem
 					height: 2rem
+					+fz(.8rem)
 					+lh(2rem)
+					color: #fff 
+				&:hover 
+					background: $main
+				&.disabled
+					background: $sen
+				&:focus, &:active
+					outline: none
+			+media-breakpoint-up(md)
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				width: 100%
+				margin: 0
+				.owl-prev
+					position: absolute
+					left: -3rem
+					top: 50%
+					transform: translateY(-50%)
+				.owl-next
+					position: absolute
+					right: -3rem
+					top: 50%
+					transform: translateY(-50%)

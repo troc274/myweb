@@ -6612,10 +6612,38 @@ footer img {
 
 .home-clients .owl-carousel .owl-nav {
   margin-bottom: 2rem; }
-  .home-clients .owl-carousel .owl-nav button i {
-    display: block;
-    width: 2rem;
-    height: 2rem;
-    line-height: 2rem; }
+  .home-clients .owl-carousel .owl-nav button {
+    background: #00c4c9;
+    border-radius: 0; }
+    .home-clients .owl-carousel .owl-nav button i {
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      font-size: 0.8rem;
+      line-height: 2rem;
+      color: #fff; }
+    .home-clients .owl-carousel .owl-nav button:hover {
+      background: #00c4c9; }
+    .home-clients .owl-carousel .owl-nav button.disabled {
+      background: #083e64; }
+    .home-clients .owl-carousel .owl-nav button:focus, .home-clients .owl-carousel .owl-nav button:active {
+      outline: none; }
+  @media (min-width: 768px) {
+    .home-clients .owl-carousel .owl-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      margin: 0; }
+      .home-clients .owl-carousel .owl-nav .owl-prev {
+        position: absolute;
+        left: -3rem;
+        top: 50%;
+        transform: translateY(-50%); }
+      .home-clients .owl-carousel .owl-nav .owl-next {
+        position: absolute;
+        right: -3rem;
+        top: 50%;
+        transform: translateY(-50%); } }
 
 /*# sourceMappingURL=main.css.map */
