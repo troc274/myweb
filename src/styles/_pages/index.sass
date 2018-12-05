@@ -7,24 +7,56 @@
 		.item
 			position: relative
 			.title
-				+pad(2rem 0)
-				height: 100%
+				+pad(2rem 0 0 0)
 				width: 100%
 				display: flex
 				align-items: center
 			+media-breakpoint-up(md)
 				.title
-					+pos(abs, 0 null null 0)
+					+pos(abs,null null 0 0)
 					color: $whites
 					+text-shadow()
+					padding-bottom: 1rem
+					+background-horizontal(rgba(0,0,0,0), rgba(0,0,0,.7))
 					h2
 						+fz(3rem)
 					p 
 						+fz(1.5rem)
 						+lh(2rem)
 		// Phần Control
-		.owl-dots
+		.owl-nav
 			margin-bottom: 2rem
+			button 
+				background: $main
+				+bor-rad(0)
+				i 
+					display: block
+					width: 3rem
+					height: 3rem
+					+lh(3rem)
+					color: #fff 
+				&:hover 
+					background: $main
+				&.disabled
+					background: rgba(0,0,0,.5)
+				&:focus, &:active
+					outline: none
+			+media-breakpoint-up(md)
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				width: 100%
+				margin: 0
+				.owl-prev
+					position: absolute
+					left: 2rem
+					top: 50%
+					transform: translateY(-50%)
+				.owl-next
+					position: absolute
+					right: 2rem
+					top: 50%
+					transform: translateY(-50%)
 /////////////////////////////////
 // Phần News
 /////////////////////////////////

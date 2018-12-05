@@ -11,30 +11,16 @@ block body
 	//- Bạn viết code vào đây nhớ là phải mở đầu bằng section ở mỗi khối
 	section.home-slider
 		.owl-carousel.owl-theme
-			.item
-				img(src="./img/home_slider_1.jpg", alt="")
-				.title
-					.container
-						.row
-							.col-md-7
-								h2 Chúng tôi là FullStack Vietnam
-								p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti incidunt ex, autem dignissimos illum aperiam pariatur in explicabo corporis delectus totam! 
-			.item
-				img(src="./img/home_slider_1.jpg", alt="")
-				.title
-					.container
-						.row
-							.col-md-7
-								h2 Chúng tôi là FullStack Vietnam
-								p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti incidunt ex, autem dignissimos illum aperiam pariatur in explicabo corporis delectus totam! 
-			.item
-				img(src="./img/home_slider_1.jpg", alt="")
-				.title
-					.container
-						.row
-							.col-md-7
-								h2 Chúng tôi là FullStack Vietnam
-								p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti incidunt ex, autem dignissimos illum aperiam pariatur in explicabo corporis delectus totam! 
+			- for(x=1;x<3;x++)
+				.item
+					img(src="./img/home_slider_"+x+".jpg", alt="")
+					.title
+						.container
+							.row
+								.col-md-8.offset-md-2.text-md-center
+									h2 Chúng tôi là FullStack Vietnam
+									p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti incidunt ex, autem dignissimos illum aperiam pariatur in explicabo corporis delectus totam! 
+			
 	section.home-news
 		.container
 			.row

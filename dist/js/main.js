@@ -36,8 +36,8 @@ $(document).ready(function () {
 	// Phần Slider
 	$('.home-slider .owl-carousel').owlCarousel({
 		items: 1,
-		nav: false,
-		dots: true,
+		nav: true,
+		dots: false,
 		navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>']
 	});
 	// Phần Clients
