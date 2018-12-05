@@ -6318,6 +6318,31 @@ html, body {
   height: 100%;
   width: 100%; }
 
+h2 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  font-weight: 900; }
+  h2:before, h2:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    display: block;
+    transform: translateX(-50%); }
+  h2:before {
+    width: 60px;
+    height: 3px;
+    background: #00c4c9;
+    bottom: -15px; }
+  h2:after {
+    background: #fff;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 3px solid #00c4c9;
+    border-radius: 50%;
+    bottom: -22px; }
+
 @media print {
   .container {
     width: auto; } }
@@ -6402,23 +6427,185 @@ footer img {
         top: 50%;
         transform: translateY(-50%); } }
 
-.home-news .item figure .blockimg {
-  border-radius: 10px;
-  overflow: hidden; }
-  .home-news .item figure .blockimg img {
-    width: 100%; }
+.home-news {
+  padding-top: 5rem;
+  padding-right: 0;
+  padding-bottom: 5rem;
+  padding-left: 0; }
+  .home-news .item a {
+    text-decoration: none; }
+    .home-news .item a figure .blockimg {
+      overflow: hidden;
+      position: relative; }
+      .home-news .item a figure .blockimg:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-shadow: 0 0 0 3px #00c4c9 inset;
+        opacity: 0;
+        transition: .5s all ease-in-out; }
+      .home-news .item a figure .blockimg img {
+        width: 100%;
+        filter: grayscale(100%);
+        transition: .5s all ease-in-out; }
+    .home-news .item a figure figcaption {
+      margin-top: 1rem; }
+      .home-news .item a figure figcaption h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0;
+        color: #000;
+        transition: .5s all ease-in-out; }
+      .home-news .item a figure figcaption time {
+        font-size: 0.85rem;
+        color: #b3b3b3; }
+      .home-news .item a figure figcaption p {
+        margin-top: .5rem;
+        color: gray;
+        transition: .5s all ease-in-out; }
+    .home-news .item a:hover figure .blockimg:after {
+      opacity: 1; }
+    .home-news .item a:hover figure .blockimg img {
+      filter: grayscale(0%);
+      transform: scale(1.5); }
+    .home-news .item a:hover figure figcaption h3 {
+      color: #00c4c9; }
+    .home-news .item a:hover figure figcaption p {
+      color: #000; }
 
-.home-news .item figure figcaption {
-  margin-top: 1rem; }
-  .home-news .item figure figcaption h3 {
-    font-size: 1.1rem;
+.home-ads {
+  padding-top: 7rem;
+  padding-right: 0;
+  padding-bottom: 7rem;
+  padding-left: 0;
+  background: url("../img/bg_1.png") center center no-repeat;
+  background-attachment: fixed;
+  background-size: cover; }
+  .home-ads .item h3 {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+    margin-left: 0;
+    transition: .5s all ease-in-out; }
+  .home-ads .item p {
+    color: gray;
     margin-bottom: 0; }
-  .home-news .item figure figcaption time {
-    font-size: 0.85rem;
-    color: #b3b3b3; }
-  .home-news .item figure figcaption p {
-    margin-top: .5rem;
-    color: gray; }
+  .home-ads .item i {
+    font-size: 4rem;
+    color: #000;
+    transition: .5s all ease-in-out; }
+  .home-ads .item:hover i, .home-ads .item:hover h3 {
+    color: #00c4c9; }
+
+.home-banner {
+  padding-top: 5rem;
+  padding-right: 0;
+  padding-bottom: 5rem;
+  padding-left: 0;
+  background: url("../img/bg_2.png") center center no-repeat;
+  background-attachment: fixed;
+  background-size: cover; }
+  .home-banner h3 {
+    color: #fff;
+    margin-bottom: 3rem; }
+  .home-banner p {
+    margin-bottom: 0; }
+    .home-banner p .btn-main {
+      background: #00c4c9;
+      text-transform: uppercase;
+      color: #fff;
+      padding-top: 0.75rem;
+      padding-right: 4.5rem;
+      padding-bottom: 0.75rem;
+      padding-left: 4.5rem;
+      border-radius: 2rem;
+      font-weight: bold;
+      font-size: 1.3rem; }
+
+.home-filter {
+  padding-top: 5rem;
+  padding-right: 0;
+  padding-bottom: 5rem;
+  padding-left: 0; }
+  .home-filter .item a {
+    text-decoration: none; }
+    .home-filter .item a figure .blockimg {
+      overflow: hidden;
+      position: relative; }
+      .home-filter .item a figure .blockimg:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-shadow: 0 0 0 3px #00c4c9 inset;
+        opacity: 0;
+        transition: .5s all ease-in-out; }
+      .home-filter .item a figure .blockimg img {
+        width: 100%;
+        filter: grayscale(100%);
+        transition: .5s all ease-in-out; }
+    .home-filter .item a:hover figure .blockimg:after {
+      opacity: 1; }
+    .home-filter .item a:hover figure .blockimg img {
+      filter: grayscale(0%);
+      transform: scale(1.5); }
+  .home-filter .nav .nav-item .nav-link {
+    text-transform: uppercase;
+    color: #000;
+    font-weight: bold;
+    margin-top: 0;
+    margin-right: 0.25rem;
+    margin-bottom: 0;
+    margin-left: 0.25rem; }
+  .home-filter .nav .nav-item.active .nav-link, .home-filter .nav .nav-item:hover .nav-link {
+    color: #fff;
+    background: #00c4c9;
+    border-radius: 2rem; }
+
+.home-testimonial {
+  padding-top: 5rem;
+  padding-right: 0;
+  padding-bottom: 5rem;
+  padding-left: 0;
+  background: url("../img/bg_3.png") center center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 400px; }
+  .home-testimonial .owl-carousel .item .member {
+    text-align: center; }
+    .home-testimonial .owl-carousel .item .member img {
+      max-width: 150px;
+      width: initial;
+      display: inline;
+      border: 3px solid #00c4c9;
+      border-radius: 50%; }
+  .home-testimonial .owl-carousel .item p {
+    font-size: 1.3rem;
+    color: gray;
+    line-height: 1.5rem;
+    margin-top: 2rem;
+    margin-right: 0;
+    margin-bottom: 2rem;
+    margin-left: 0; }
+  .home-testimonial .owl-carousel .item .job h4 {
+    color: #00c4c9;
+    margin-bottom: 0; }
+  .home-testimonial .owl-carousel .item .job .po {
+    color: #4d4d4d;
+    font-weight: bold; }
+  .home-testimonial .owl-carousel .owl-dots button {
+    outline: none; }
+    .home-testimonial .owl-carousel .owl-dots button span {
+      background: #b3b3b3; }
+    .home-testimonial .owl-carousel .owl-dots button.active span {
+      background: #00c4c9; }
 
 .home-clients .owl-carousel .item {
   padding: 0.5rem; }

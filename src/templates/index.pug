@@ -20,37 +20,96 @@ block body
 								.col-md-8.offset-md-2.text-md-center
 									h2 Chúng tôi là FullStack Vietnam
 									p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti incidunt ex, autem dignissimos illum aperiam pariatur in explicabo corporis delectus totam! 
-			
+
 	section.home-news
 		.container
 			.row
-				.col-md-4.item
-					figure
-						.blockimg
-							img(src="./img/home_news_1.jpg", alt="", srcset="")
-						figcaption
-							h3 
-								a(href="#") Chúng tôi là FullStack Vietnam
-							time 22/06/2018
-							p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti incidunt ex, autem dignissimos illum aperiam pariatur in explicabo corporis delectus totam! 
-				.col-md-4.item
-					figure
-						.blockimg
-							img(src="./img/home_news_2.jpg", alt="", srcset="")
-						figcaption
-							h3 
-								a(href="#") Chúng tôi là FullStack Vietnam
-							time 22/06/2018
-							p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti incidunt ex, autem dignissimos illum aperiam pariatur in explicabo corporis delectus totam! 
-				.col-md-4.item
-					figure
-						.blockimg
-							img(src="./img/home_news_3.jpg", alt="", srcset="")
-						figcaption
-							h3 
-								a(href="#") Chúng tôi là FullStack Vietnam
-							time 22/06/2018
-							p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti incidunt ex, autem dignissimos illum aperiam pariatur in explicabo corporis delectus totam! 
+				.col 
+					h2 Tin tức
+			.row
+				- for(x=1;x<4;x++)
+					.col-md-4.mb-4.mb-md-0.item
+						a(href="#")
+							figure
+								.blockimg
+									img(src="./img/home_news_"+x+".jpg", alt="", srcset="")
+								figcaption
+									h3 Chúng tôi là FullStack Vietnam
+									time 22/06/2018
+									p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti incidunt ex, autem dignissimos illum aperiam pariatur in explicabo corporis delectus totam! 
+	section.home-ads
+		.container
+			.row
+				.col 
+					h2 Định hướng XHCN
+			.row.mt-5
+				- for(x=1;x<5;x++)
+					.col-md-3.mb-4.mb-md-0.item
+						p 
+							- if(x==1)
+								i.fa.fa-floppy-o
+							- else if(x==2)
+								i.fa.fa-moon-o
+							- else if(x==3)
+								i.fa.fa-object-group
+							- else 
+								i.fa.fa-files-o
+						h3 FullStack Vietnam
+						p Cam kết chất lượng sản phẩm cao nhất Luôn đặt chữ tín lên hàng đầu Lấy lợi ích của khách hàng làm trung tâm hoạt động
+
+
+	section.home-banner
+		.container
+			.row
+				.col-md-8.offset-md-2.text-center
+					h3 Cam kết chất lượng sản phẩm cao nhất Luôn đặt chữ tín lên hàng đầu Lấy lợi ích của khách hàng làm trung tâm hoạt động
+					p 
+						a.btn.btn-main(href="#") Xem thêm
+
+
+	section.home-filter
+		.container
+			.row
+				.col 
+					h2 Tin tức
+			.row.mb-5
+				.col 
+					ul.nav.justify-content-center
+						li.nav-item.active
+							a.nav-link(href="#") Bảo Nguyên
+						li.nav-item
+							a.nav-link(href="#") Xinh đẹp
+						li.nav-item
+							a.nav-link(href="#") Khoai to
+
+			.row
+				- for(x=1;x<4;x++)
+					.col-md-4.mb-4.mb-md-0.item
+						a(href="#")
+							figure
+								.blockimg
+									img(src="./img/home_news_"+x+".jpg", alt="", srcset="")
+								
+	section.home-testimonial
+		.container
+			.row
+				.col 
+					h2 Khách nó chửi
+		.owl-carousel.owl-theme
+			- for(x=1;x<3;x++)
+				.item
+					.member
+						img(src="./img/mem.png", alt="")
+					.title
+						.container
+							.row
+								.col-md-8.offset-md-2.text-md-center
+									p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti incidunt ex, autem dignissimos illum aperiam pariatur in explicabo corporis delectus totam! 
+									.job
+										h4 Bao Nguyen
+										.po CEO FullStack
+
+
 	section.home-clients.mt-5
 		.container
 			.row

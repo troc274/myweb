@@ -57,31 +57,207 @@
 					right: 2rem
 					top: 50%
 					transform: translateY(-50%)
+
+
+
+
 /////////////////////////////////
 // Phần News
 /////////////////////////////////
 
 .home-news
+	+pad(5rem 0)
 	.item 
-		figure
-			.blockimg
-				+bor-rad(10px)
-				overflow: hidden
-				img
-					width: 100%
-			figcaption 
-				margin-top: 1rem
-				h3 
-					+fz(1.1rem)
-					margin-bottom: 0
-				time 
-					+fz(.85rem)
-					color: darken($whites,30%)
-				p 
-					margin-top: .5rem
-					color: darken($whites,50%)
+		a
+			text-decoration: none
+			figure
+				.blockimg
+					overflow: hidden
+					position: relative
+					&:after 
+						content: ""
+						width: 100%
+						height: 100%
+						+pos(abs, 0 null null 0)
+						box-shadow: 0 0 0 3px $main inset
+						opacity: 0
+						transition: .5s all ease-in-out
+					img
+						width: 100%
+						filter: grayscale(100%)
+						transition: .5s all ease-in-out
+				figcaption 
+					margin-top: 1rem
+					h3 
+						+fz(1.1rem)
+						margin-bottom: 0
+						color: #000
+						transition: .5s all ease-in-out
+					time 
+						+fz(.85rem)
+						color: darken($whites,30%)
+					p 
+						margin-top: .5rem
+						color: darken($whites,50%)
+						transition: .5s all ease-in-out
+			// Khi đưa chuột vào 
+			&:hover
+				figure
+					.blockimg
+						&:after 
+							opacity: 1
+						img 
+							filter: grayscale(0%)
+							transform: scale(1.5)
+					figcaption 
+						h3 
+							color: $main
+						p 
+							color: #000
+
+
 /////////////////////////////////
-// Phần News
+// Phần Ads
+/////////////////////////////////
+
+.home-ads
+	+pad(7rem 0)
+	background: url('../img/bg_1.png') center center no-repeat
+	background-attachment: fixed
+	background-size: cover
+	.item 
+		h3 
+			text-transform: uppercase
+			+fz(1.2rem)
+			+fw(bold)
+			+mar(1.5rem 0)
+			transition: .5s all ease-in-out
+		p 
+			color: darken($whites,50%)
+			margin-bottom: 0
+		i 
+			+fz(4rem)
+			color: #000
+			transition: .5s all ease-in-out
+		&:hover 
+			i, h3 
+				color: $main
+
+/////////////////////////////////
+// Phần Banner
+/////////////////////////////////
+
+.home-banner
+	+pad(5rem 0)
+	background: url('../img/bg_2.png') center center no-repeat
+	background-attachment: fixed
+	background-size: cover
+	h3 
+		color: #fff 
+		margin-bottom: 3rem
+	p 
+		margin-bottom: 0
+		.btn-main
+			background: $main
+			text-transform: uppercase
+			color: #fff 
+			+pad(.75rem 4.5rem)
+			+bor-rad(2rem)
+			+fw(bold)
+			+fz(1.3rem)
+
+
+/////////////////////////////////
+// Phần Filter 
+/////////////////////////////////
+.home-filter
+	+pad(5rem 0)
+	.item 
+		a
+			text-decoration: none
+			figure
+				.blockimg
+					overflow: hidden
+					position: relative
+					&:after 
+						content: ""
+						width: 100%
+						height: 100%
+						+pos(abs, 0 null null 0)
+						box-shadow: 0 0 0 3px $main inset
+						opacity: 0
+						transition: .5s all ease-in-out
+					img
+						width: 100%
+						filter: grayscale(100%)
+						transition: .5s all ease-in-out
+				
+			// Khi đưa chuột vào 
+			&:hover
+				figure
+					.blockimg
+						&:after 
+							opacity: 1
+						img 
+							filter: grayscale(0%)
+							transform: scale(1.5)
+	.nav
+		.nav-item
+			.nav-link
+				text-transform: uppercase
+				color: #000 
+				+fw(bold)
+				+mar(0 .25rem)
+			&.active, &:hover
+				.nav-link
+					color: #fff 
+					background: $main 
+					+bor-rad(2rem)
+					
+
+/////////////////////////////////
+// Phần Testimonial
+/////////////////////////////////
+.home-testimonial
+	+pad(5rem 0)
+	background: url('../img/bg_3.png') center center no-repeat
+	background-attachment: fixed
+	background-size: cover
+	min-height: 400px 
+	.owl-carousel
+		.item
+			.member
+				text-align: center
+				img 
+					max-width: 150px
+					width: initial
+					display: inline
+					border: 3px solid $main
+					+bor-rad(50%)
+			p 
+				+fz(1.3rem)
+				color: darken($whites,50%)
+				+lh(1.5rem)
+				+mar(2rem 0)
+			.job
+				h4 
+					color: $main 
+					margin-bottom: 0
+				.po 
+					color: darken($whites,70%)
+					+fw(bold)
+		.owl-dots
+			button 
+				outline: none
+				span 
+					background: darken($whites,30%)
+				&.active
+					span 
+						background: $main
+
+
+/////////////////////////////////
+// Phần Clients
 /////////////////////////////////
 
 .home-clients

@@ -40,6 +40,13 @@ $(document).ready(function () {
 		dots: false,
 		navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>']
 	});
+	// Phần Testimonial
+	$('.home-testimonial .owl-carousel').owlCarousel({
+		items: 1,
+		nav: false,
+		dots: true,
+		autoplay: true
+	});
 	// Phần Clients
 	$('.home-clients .owl-carousel').owlCarousel({
 		items: 1,
