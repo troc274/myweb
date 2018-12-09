@@ -2,8 +2,8 @@ extends _layout/layout
 
 //- Các giá trị mặc định cho trang web
 block variables
-	- var title = 'Home'
-	- var description = 'Description for home page'
+	- var title = 'NETA Vietnam'
+	- var description = 'Lò đào tạo CNTT chuyên nghiệp tại Sài Gòn. Chúng tôi là các chuyên gia uy tín trong lĩnh vực lập trình ứng dụng, thiết kế và sáng tạo. Chuyên đào tạo lập trình web, đào tạo fullstack nodejs, đào tạo frontend, đào tạo design...'
 	- var bodyclass = 'home'
 
 //- Phần khai báo body
@@ -26,13 +26,17 @@ block body
 			li.list-inline-item
 				a.list-link(href="https://www.facebook.com/netavietnam")
 					i.fa.fa-facebook
-			//- li.list-inline-item
-				a.list-link(href="http://")
+			li.list-inline-item
+				a.list-link(href="https://github.com/netavietnam")
 					i.fa.fa-github
 			//- li.list-inline-item
 				a.list-link(href="http://")
 					i.fa.fa-youtube
 	#cal
-		.item 
-			img(src="./img/borua.png", alt="")
+		.owl-carousel
+			.item 
+				img(src="./img/borua.png", alt="")
+			.item 
+				img(src="./img/borua-2.png", alt="")
+			
 	#slogan Đào tạo CNTT trực tuyến

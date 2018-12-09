@@ -82,10 +82,42 @@ main
 		// +pos(abs, 50% null null 40%)
 		// transform: translateX(-50%) translateY(-50%)
 		text-align: center
-		+mar(3rem 0)
+		+mar(3rem auto)
+		max-width: 540px
 		img 
-			width: 80%
+			max-width: 320px
+	.owl-carousel
+		.item 
+			text-align: center
+			padding: 0 2rem
+			img 
+				display: inline-block
+		.owl-nav
+			margin-top: 2rem
+			.owl-prev, .owl-next
+				background: $c4
+				color: darken($c4,10%)
+				+mar(.25rem)
+				&:focus 
+					outline: none
+				&:hover 
+					background: $c3
+					color: $c1
+				i 
+					width: 2rem
+					height: 2rem
+					display: flex
+					justify-content: center 
+					align-items: center
 	+media-breakpoint-up(md)
+		.owl-carousel
+			.owl-nav
+				margin-top: 0
+				+pos(fix, null 2rem 2rem null)
+				.owl-prev, .owl-next
+					i 
+						width: 3rem
+						height: 3rem
 		#menu 
 			+pos(abs,30% 3% null null)
 			+mar(0)
