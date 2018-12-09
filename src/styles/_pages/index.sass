@@ -1,67 +1,131 @@
-/////////////////////////////////
-// Phần Slider
-/////////////////////////////////
-.home-slider
-	.owl-carousel
-		// Phần Slider
-		.item
+$c1: #290369 
+$c2: #b921b9 
+$c3: #ffff00 
+$c4: #04d3f8 
+
+main 
+	width: 100%
+	min-height: 100%
+	height: 100vh
+	overflow-y: auto
+	overflow-x: hidden
+	background: url('../img/bg.jpg') top center no-repeat
+	background-size: cover
+	position: relative
+	#logo 
+		text-align: center
+		padding-top: 2rem
+		img 
+			max-width: 180px
+	#slogan 
+		+mar(3rem 0)
+		width: 100%
+		text-align: center
+		color: #fff
+		+fw(900)
+		text-transform: uppercase
+		+fz(1.5rem)
+		text-shadow: 1px 1px rgba(0, 0, 0, 0.6)
+	#menu 
+		+mar(3rem 2rem)
+		background: rgb(255, 0, 255);
+		padding: 3rem;
+		border: 5px solid rgba(48, 0, 110, 0.2);
+		text-transform: uppercase
+		text-align: center
+		h1 
+			color: $c1
+			+fw(700)
+			+fz(2rem)
 			position: relative
-			.title
-				+pad(2rem 0)
-				height: 100%
-				width: 100%
-				display: flex
-				align-items: center
-			+media-breakpoint-up(md)
-				.title
-					+pos(abs, 0 null null 0)
-					color: $whites
-					+text-shadow()
-					h2
-						+fz(3rem)
-					p 
-						+fz(1.5rem)
-						+lh(2rem)
-		// Phần Control
-		.owl-dots
 			margin-bottom: 2rem
-/////////////////////////////////
-// Phần News
-/////////////////////////////////
+			&:after 
+				display: block
+				width: 20px 
+				height: 3px
+				+bor-rad(15px)
+				background: $c2
+				+pos(abs, null 0 -5px null)
+		ul.list-unstyled
+			.list-item
+				+mar(.25rem 0)
+				.list-link 
+					color: $c2
+					+pad(.5rem 0)
+					+fw(700)
+					+fz(1.2rem)
+					text-decoration: none
+				&:hover 
+					.list-link 
+						color: $c3
 
-.home-news
-	.item 
-		figure
-			.blockimg
-				+bor-rad(10px)
-				overflow: hidden
-				img
-					width: 100%
-			figcaption 
-				margin-top: 1rem
-				h3 
-					+fz(1.1rem)
-					margin-bottom: 0
-				time 
-					+fz(.85rem)
-					color: darken($whites,30%)
-				p 
-					margin-top: .5rem
-					color: darken($whites,50%)
-/////////////////////////////////
-// Phần News
-/////////////////////////////////
-
-.home-clients
-	.owl-carousel
-		.item 
-			+pad(.5rem)
-		// Phần Control
-		.owl-nav
-			margin-bottom: 2rem
-			button 
-				i 
-					display: block
-					width: 2rem
-					height: 2rem
-					+lh(2rem)
+		ul.list-inline
+			margin-top: 3rem
+			.list-inline-item
+				.list-link
+					color: lighten($c2,20%)
+					background: $c2
+					width: 1.5rem
+					height: 1.5rem
+					display: flex
+					+bor-rad(3px)
+					align-items: center
+					justify-content: center 
+					text-decoration: none
+					i
+						+fz(.85rem)
+				&:hover 
+					.list-link 
+						background: $c3
+						color: $c1
+	#cal
+		// +pos(abs, 50% null null 40%)
+		// transform: translateX(-50%) translateY(-50%)
+		text-align: center
+		+mar(3rem 0)
+		img 
+			width: 80%
+	+media-breakpoint-up(md)
+		#menu 
+			+pos(abs,30% 3% null null)
+			+mar(0)
+			+pad(0)
+			text-align: right
+			border: 0
+			background: none
+			h1 
+				&:after 
+					content: ''
+		#logo
+			+pos(abs, 2rem 2rem null null)
+			padding-top: 0
+		#slogan 
+			+pos(abs, null null 2rem 2rem)
+			color: $c1
+			text-align: left
+			+mar(0)
+			text-shadow: none
+		#cal
+			+pos(abs, 25% null null 5%)
+			+mar(0)
+	+media-breakpoint-up(lg)
+		#menu 
+			+pos(abs,30% 8% null null)
+		#cal
+			+pos(abs, 25% null null 10%)
+	+media-breakpoint-up(xl)
+		#menu 
+			+pos(abs,30% 17% null null)
+		#cal
+			+pos(abs, 25% null null 15%)
+	@media (min-width: 1366px)
+		#menu 
+			+pos(abs,30% 20% null null)
+		#cal
+			+pos(abs, 25% null null 23%)
+	@media (min-width: 1400px)
+		#menu 
+			+pos(abs,35% 20% null null)
+		#cal
+			+pos(abs, 30% null null 23%)
+		
