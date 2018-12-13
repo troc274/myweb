@@ -31,4 +31,26 @@ $(function () {
         $('select.form-control').removeClass('form-control').css('width', '100%');
     }
 });
+var str = 'abcde';
+var pass = 'D1;S2;F3;G5;H6';
+var text = 'ab8798ckekd';
+
+var m = str.split('');
+var n = pass.split(';');
+
+for (var key in m) {
+    if (m.hasOwnProperty(key)) {
+        var element = m[key];
+        text = text.replace(element, n[key]);
+    }
+}
+console.log(text);
+
+for (var _key in m) {
+    if (m.hasOwnProperty(_key)) {
+        var _element = m[_key];
+        text = text.replace(n[_key], _element);
+    }
+}
+console.log(text);
 //# sourceMappingURL=main.js.map
