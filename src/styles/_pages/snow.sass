@@ -1,0 +1,65 @@
+.side
+	&::before, &::after
+		display: none
+	.md > blockquote:last-of-type
+		position: absolute
+		top: 0
+		bottom: 0
+		background-size: cover
+		left: 0
+		right: 0
+		pointer-events: none
+		p, a
+			position: absolute
+			top: 0
+			bottom: 0
+			background-size: cover
+			left: 0
+			right: 0
+			pointer-events: none
+		// background: url("../img/header-bg.jpg") center center
+		top: 4px
+		height: 100%
+		z-index: 100
+		min-width: 900px
+		p
+			overflow: hidden
+			left: -100px
+			right: -100px
+			perspective: 100px
+			margin: 0
+		[href='#snow']
+			display: block
+			height: 2000px
+			background-image: url(../img/snow-sparse-flipped.png)
+			animation: s 10s linear infinite
+			background-size: auto
+		p
+			animation: sw 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate
+			transform: translateX(-50px)
+			&:nth-of-type(2)
+				// background-image: url(../img/heroes.png)
+				animation: none
+			&:nth-of-type(1) a
+				background-image: url(../img/snow-dense.png)
+				animation-duration: 11s
+			&:nth-of-type(4) a
+				animation-duration: 5s
+				transform: translateZ(70px)
+				animation-name: sC
+			&:nth-of-type(1)
+				animation-duration: 10s
+
+@keyframes sw
+	to
+		transform: translateX(50px)
+
+
+@keyframes sC
+	0%
+		transform: translateY(-1000px) translateZ(70px)
+
+
+@keyframes s
+	0%
+		transform: translateY(-1000px)

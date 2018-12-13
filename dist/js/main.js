@@ -45,10 +45,12 @@ setTimeout(function () {
 	$('#congrats').show();
 	fancyPopIn();
 	// $('#buzzer').get(0).play();
+	newQuote();
 }, 500);
 setInterval(function () {
 	$('#congrats').show();
 	fancyPopIn();
+	newQuote();
 }, 10000);
 
 $('#player').on('click', function () {
@@ -140,5 +142,15 @@ function init(properties) {
 	for (var i = 0; i < properties.numberOfBlobs; i++) {
 		$congratsSection.append('<div class="particle blob ' + i + '"></div>');
 	}
+}
+
+function newQuote() {
+	var quotes = ['NETA Vietnam', 'Học trực tuyến cùng giảng viên', 'Đào tạo CNTT trực tuyến', 'Hãy là một IT đam mê', 'Những khóa học độc đáo và chất lượng', 'Chúc bạn một giáng sinh an lành', 'Chúc mừng năm mới', 'Mừng Chúa Giáng Sinh'];
+
+	var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+	$('.show-quote').fadeOut(300, function () {
+		$(this).text(randomQuote).fadeIn(300);
+	});
 }
 //# sourceMappingURL=main.js.map

@@ -7908,3 +7908,93 @@ main {
   @media (min-width: 1200px) {
     main .noel #slogan {
       font-size: 2.5rem; } }
+
+.side::before, .side::after {
+  display: none; }
+
+.side .md > blockquote:last-of-type {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  top: 4px;
+  height: 100%;
+  z-index: 100;
+  min-width: 900px; }
+  .side .md > blockquote:last-of-type p, .side .md > blockquote:last-of-type a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    left: 0;
+    right: 0;
+    pointer-events: none; }
+  .side .md > blockquote:last-of-type p {
+    overflow: hidden;
+    left: -100px;
+    right: -100px;
+    -webkit-perspective: 100px;
+    perspective: 100px;
+    margin: 0; }
+  .side .md > blockquote:last-of-type [href='#snow'] {
+    display: block;
+    height: 2000px;
+    background-image: url(../img/snow-sparse-flipped.png);
+    -webkit-animation: s 10s linear infinite;
+    animation: s 10s linear infinite;
+    background-size: auto; }
+  .side .md > blockquote:last-of-type p {
+    -webkit-animation: sw 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate;
+    animation: sw 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate;
+    -webkit-transform: translateX(-50px);
+    transform: translateX(-50px); }
+    .side .md > blockquote:last-of-type p:nth-of-type(2) {
+      -webkit-animation: none;
+      animation: none; }
+    .side .md > blockquote:last-of-type p:nth-of-type(1) a {
+      background-image: url(../img/snow-dense.png);
+      -webkit-animation-duration: 11s;
+      animation-duration: 11s; }
+    .side .md > blockquote:last-of-type p:nth-of-type(4) a {
+      -webkit-animation-duration: 5s;
+      animation-duration: 5s;
+      -webkit-transform: translateZ(70px);
+      transform: translateZ(70px);
+      -webkit-animation-name: sC;
+      animation-name: sC; }
+    .side .md > blockquote:last-of-type p:nth-of-type(1) {
+      -webkit-animation-duration: 10s;
+      animation-duration: 10s; }
+
+@-webkit-keyframes sw {
+  to {
+    -webkit-transform: translateX(50px);
+    transform: translateX(50px); } }
+
+@keyframes sw {
+  to {
+    -webkit-transform: translateX(50px);
+    transform: translateX(50px); } }
+
+@-webkit-keyframes sC {
+  0% {
+    -webkit-transform: translateY(-1000px) translateZ(70px);
+    transform: translateY(-1000px) translateZ(70px); } }
+
+@keyframes sC {
+  0% {
+    -webkit-transform: translateY(-1000px) translateZ(70px);
+    transform: translateY(-1000px) translateZ(70px); } }
+
+@-webkit-keyframes s {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px); } }
+
+@keyframes s {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px); } }
