@@ -7,157 +7,86 @@ main
 	width: 100%
 	min-height: 100%
 	height: 100vh
-	overflow-y: auto
-	overflow-x: hidden
-	background: url('../img/bg.jpg') top center no-repeat
+	overflow: hidden
+	background: url('../img/bg.png') top center no-repeat
 	background-size: cover
 	position: relative
-	#logo 
-		text-align: center
-		padding-top: 2rem
-		img 
-			max-width: 180px
-	#slogan 
-		+mar(3rem 0)
-		width: 100%
-		text-align: center
-		color: #fff
-		+fw(900)
-		text-transform: uppercase
-		+fz(1.5rem)
-		text-shadow: 1px 1px rgba(0, 0, 0, 0.6)
-	#menu 
-		+mar(3rem 2rem)
-		background: rgb(255, 0, 255);
-		padding: 3rem;
-		border: 5px solid rgba(48, 0, 110, 0.2);
-		text-transform: uppercase
-		text-align: center
-		h1 
-			color: $c1
-			+fw(700)
-			+fz(2rem)
-			position: relative
-			margin-bottom: 2rem
-			&:after 
-				display: block
-				width: 20px 
-				height: 3px
-				+bor-rad(15px)
-				background: $c2
-				+pos(abs, null 0 -5px null)
-		ul.list-unstyled
-			.list-item
-				+mar(.25rem 0)
-				.list-link 
-					color: $c2
-					+pad(.5rem 0)
-					+fw(700)
-					+fz(1.2rem)
-					text-decoration: none
-				&:hover 
-					.list-link 
-						color: $c3
+	padding: 2rem
+	display: flex
+	justify-content: center 
+	align-items: center 
+	#player, #pause
+		+pos(fix, null null .8rem 2rem)
+		z-index: 999
+		width: 3rem
+		height: 3rem
+		border-radius: 50%
+		background: rgba(0,0,0,1)
+		display: flex
+		justify-content: center 
+		align-items: center 
+		color: #ff0
+		border: 3px solid #ff0
+		cursor: pointer
 
-		ul.list-inline
-			margin-top: 3rem
-			.list-inline-item
-				.list-link
-					color: lighten($c2,20%)
-					background: $c2
-					width: 1.5rem
-					height: 1.5rem
-					display: flex
-					+bor-rad(3px)
-					align-items: center
-					justify-content: center 
-					text-decoration: none
-					i
-						+fz(.85rem)
-				&:hover 
-					.list-link 
-						background: $c3
-						color: $c1
-	#cal
-		// +pos(abs, 50% null null 40%)
-		// transform: translateX(-50%) translateY(-50%)
-		text-align: center
-		+mar(3rem auto)
-		max-width: 540px
-		img 
-			max-width: 320px
-	.owl-carousel
-		.item 
+	#buzzer
+		display: none
+	#congrats
+		+pos(fix, 50% null null 50%)
+		height: 200px
+		width: 200px
+		transform: translateX(-50%) translateY(-50%)
+		display: none
+		.particle
+			color: #ff0
+			&:nth-child(odd)
+				color: #fff
+	.noel
+		padding-bottom: 6rem
+		#logo 
 			text-align: center
-			padding: 0 2rem
+			padding-top: 2rem
 			img 
-				display: inline-block
-		.owl-nav
-			margin-top: 2rem
-			.owl-prev, .owl-next
-				background: $c4
-				color: darken($c4,10%)
-				+mar(.25rem)
-				&:focus 
-					outline: none
-				&:hover 
-					background: $c3
-					color: $c1
-				i 
-					width: 2rem
-					height: 2rem
-					display: flex
-					justify-content: center 
-					align-items: center
-	+media-breakpoint-up(md)
-		.owl-carousel
-			.owl-nav
-				margin-top: 0
-				+pos(fix, null 2rem 2rem null)
-				.owl-prev, .owl-next
-					i 
-						width: 3rem
-						height: 3rem
-		#menu 
-			+pos(abs,30% 3% null null)
-			+mar(0)
-			+pad(0)
-			text-align: right
-			border: 0
-			background: none
-			h1 
-				&:after 
-					content: ''
-		#logo
-			+pos(abs, 2rem 2rem null null)
-			padding-top: 0
+				max-width: 180px
+		#loichuc 
+			text-align: center
+			padding-top: 2rem
+			img 
+				max-width: 100%
+				width: 280px
 		#slogan 
-			+pos(abs, null null 2rem 2rem)
-			color: $c1
-			text-align: left
-			+mar(0)
-			text-shadow: none
-		#cal
-			+pos(abs, 25% null null 5%)
-			+mar(0)
-	+media-breakpoint-up(lg)
-		#menu 
-			+pos(abs,30% 8% null null)
-		#cal
-			+pos(abs, 25% null null 10%)
-	+media-breakpoint-up(xl)
-		#menu 
-			+pos(abs,30% 17% null null)
-		#cal
-			+pos(abs, 25% null null 15%)
-	@media (min-width: 1366px)
-		#menu 
-			+pos(abs,30% 20% null null)
-		#cal
-			+pos(abs, 25% null null 23%)
-	@media (min-width: 1400px)
-		#menu 
-			+pos(abs,35% 20% null null)
-		#cal
-			+pos(abs, 30% null null 23%)
+			+mar(3rem 0)
+			width: 100%
+			text-align: center
+			color: #fff
+			+fw(900)
+			text-transform: uppercase
+			+fz(1rem)
+			text-shadow: 1px 1px rgba(0, 0, 0, 0.3)
+		#thong
+			background: url('../img/thong.png') bottom right no-repeat
+			+pos(fix, null 0 2rem null)
+			min-height: 200px
+			width: 100%
+			background-size: cover
+			img 
+				max-width: 100%
+				+opacity(0)
+	+media-breakpoint-up(md)
+		.noel
+			#logo
+				+pos(fix, 2rem null null 2rem)
+				padding-top: 0
+			#slogan 
+				+fz(1.5rem)
+// 	@media (min-width: 1366px)
+// 		#menu 
+// 			+pos(abs,30% 20% null null)
+// 		#cal
+// 			+pos(abs, 25% null null 23%)
+// 	@media (min-width: 1400px)
+// 		#menu 
+// 			+pos(abs,35% 20% null null)
+// 		#cal
+// 			+pos(abs, 30% null null 23%)
 		

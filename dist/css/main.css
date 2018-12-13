@@ -7791,206 +7791,110 @@ main {
   width: 100%;
   min-height: 100%;
   height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  background: url("../img/bg.jpg") top center no-repeat;
+  overflow: hidden;
+  background: url("../img/bg.png") top center no-repeat;
   background-size: cover;
-  position: relative; }
-  main #logo {
-    text-align: center;
-    padding-top: 2rem; }
-    main #logo img {
-      max-width: 180px; }
-  main #slogan {
-    margin-top: 3rem;
-    margin-right: 0;
-    margin-bottom: 3rem;
-    margin-left: 0;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.6); }
-  main #menu {
-    margin-top: 3rem;
-    margin-right: 2rem;
-    margin-bottom: 3rem;
-    margin-left: 2rem;
-    background: magenta;
-    padding: 3rem;
-    border: 5px solid rgba(48, 0, 110, 0.2);
-    text-transform: uppercase;
-    text-align: center; }
-    main #menu h1 {
-      color: #290369;
-      font-weight: 700;
-      font-size: 2rem;
-      position: relative;
-      margin-bottom: 2rem; }
-      main #menu h1:after {
-        display: block;
-        width: 20px;
-        height: 3px;
-        border-radius: 15px;
-        background: #b921b9;
-        position: absolute;
-        right: 0;
-        bottom: -5px; }
-    main #menu ul.list-unstyled .list-item {
-      margin-top: 0.25rem;
+  position: relative;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  main #player, main #pause {
+    position: fixed;
+    bottom: 0.8rem;
+    left: 2rem;
+    z-index: 999;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: black;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #ff0;
+    border: 3px solid #ff0;
+    cursor: pointer; }
+  main #buzzer {
+    display: none; }
+  main #congrats {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    width: 200px;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    display: none; }
+    main #congrats .particle {
+      color: #ff0; }
+      main #congrats .particle:nth-child(odd) {
+        color: #fff; }
+  main .noel {
+    padding-bottom: 6rem; }
+    main .noel #logo {
+      text-align: center;
+      padding-top: 2rem; }
+      main .noel #logo img {
+        max-width: 180px; }
+    main .noel #loichuc {
+      text-align: center;
+      padding-top: 2rem; }
+      main .noel #loichuc img {
+        max-width: 100%;
+        width: 280px; }
+    main .noel #slogan {
+      margin-top: 3rem;
       margin-right: 0;
-      margin-bottom: 0.25rem;
-      margin-left: 0; }
-      main #menu ul.list-unstyled .list-item .list-link {
-        color: #b921b9;
-        padding-top: 0.5rem;
-        padding-right: 0;
-        padding-bottom: 0.5rem;
-        padding-left: 0;
-        font-weight: 700;
-        font-size: 1.2rem;
-        text-decoration: none; }
-      main #menu ul.list-unstyled .list-item:hover .list-link {
-        color: #ffff00; }
-    main #menu ul.list-inline {
-      margin-top: 3rem; }
-      main #menu ul.list-inline .list-inline-item .list-link {
-        color: #e25ee2;
-        background: #b921b9;
-        width: 1.5rem;
-        height: 1.5rem;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        border-radius: 3px;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        text-decoration: none; }
-        main #menu ul.list-inline .list-inline-item .list-link i {
-          font-size: 0.85rem; }
-      main #menu ul.list-inline .list-inline-item:hover .list-link {
-        background: #ffff00;
-        color: #290369; }
-  main #cal {
-    text-align: center;
-    margin-top: 3rem;
-    margin-right: auto;
-    margin-bottom: 3rem;
-    margin-left: auto;
-    max-width: 540px; }
-    main #cal img {
-      max-width: 320px; }
-  main .owl-carousel .item {
-    text-align: center;
-    padding: 0 2rem; }
-    main .owl-carousel .item img {
-      display: inline-block; }
-  main .owl-carousel .owl-nav {
-    margin-top: 2rem; }
-    main .owl-carousel .owl-nav .owl-prev, main .owl-carousel .owl-nav .owl-next {
-      background: #04d3f8;
-      color: #03a8c6;
-      margin: 0.25rem; }
-      main .owl-carousel .owl-nav .owl-prev:focus, main .owl-carousel .owl-nav .owl-next:focus {
-        outline: none; }
-      main .owl-carousel .owl-nav .owl-prev:hover, main .owl-carousel .owl-nav .owl-next:hover {
-        background: #ffff00;
-        color: #290369; }
-      main .owl-carousel .owl-nav .owl-prev i, main .owl-carousel .owl-nav .owl-next i {
-        width: 2rem;
-        height: 2rem;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center; }
-  @media (min-width: 768px) {
-    main .owl-carousel .owl-nav {
-      margin-top: 0;
+      margin-bottom: 3rem;
+      margin-left: 0;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 1rem;
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.3); }
+    main .noel #thong {
+      background: url("../img/thong.png") bottom right no-repeat;
       position: fixed;
-      right: 2rem;
-      bottom: 2rem; }
-      main .owl-carousel .owl-nav .owl-prev i, main .owl-carousel .owl-nav .owl-next i {
-        width: 3rem;
-        height: 3rem; }
-    main #menu {
-      position: absolute;
-      top: 30%;
-      right: 3%;
-      margin: 0;
-      padding: 0;
-      text-align: right;
-      border: 0;
-      background: none; }
-      main #menu h1:after {
-        content: ''; }
-    main #logo {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      padding-top: 0; }
-    main #slogan {
-      position: absolute;
+      right: 0;
       bottom: 2rem;
+      min-height: 200px;
+      width: 100%;
+      background-size: cover; }
+      main .noel #thong img {
+        max-width: 100%;
+        filter: alpha(opacity=0);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        -webkit-opacity: 0;
+        -khtml-opacity: 0;
+        -moz-opacity: 0;
+        -ms-opacity: 0;
+        -o-opacity: 0;
+        opacity: 0; }
+  @media (min-width: 768px) {
+    main .noel #logo {
+      position: fixed;
+      top: 2rem;
       left: 2rem;
-      color: #290369;
-      text-align: left;
-      margin: 0;
-      text-shadow: none; }
-    main #cal {
-      position: absolute;
-      top: 25%;
-      left: 5%;
-      margin: 0; } }
-  @media (min-width: 992px) {
-    main #menu {
-      position: absolute;
-      top: 30%;
-      right: 8%; }
-    main #cal {
-      position: absolute;
-      top: 25%;
-      left: 10%; } }
-  @media (min-width: 1200px) {
-    main #menu {
-      position: absolute;
-      top: 30%;
-      right: 17%; }
-    main #cal {
-      position: absolute;
-      top: 25%;
-      left: 15%; } }
-  @media (min-width: 1366px) {
-    main #menu {
-      position: absolute;
-      top: 30%;
-      right: 20%; }
-    main #cal {
-      position: absolute;
-      top: 25%;
-      left: 23%; } }
-  @media (min-width: 1400px) {
-    main #menu {
-      position: absolute;
-      top: 35%;
-      right: 20%; }
-    main #cal {
-      position: absolute;
-      top: 30%;
-      left: 23%; } }
+      padding-top: 0; }
+    main .noel #slogan {
+      font-size: 1.5rem; } }
