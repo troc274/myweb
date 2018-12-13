@@ -88,21 +88,30 @@
 <!-- ////////////// Begin Main ////////////// -->
     <main>
       <div id="logo"> <img src="./img/logo.png" alt="NETA Vietnam" srcset=""></div>
-      <div id="menu"> 
-        <h1>NETA VietNam</h1>
-        <ul class="list-unstyled">
-          <li class="list-item"><a class="list-link" href="https://neta.edu.vn/bo-rua-neta#sumenh">SỨ MÊNH FEDER</a></li>
-          <li class="list-item"><a class="list-link" href="https://neta.edu.vn/bo-rua-neta#borua">BỌ RÙA STACKER</a></li>
-          <li class="list-item"><a class="list-link" href="https://neta.edu.vn/bo-rua-neta#dungsi">DŨNG SĨ CODER</a></li>
-          <li class="list-item"><a class="list-link" href="https://neta.edu.vn">NGÔI TRƯỜNG NETA</a></li>
-        </ul>
-        <ul class="list-inline">
-          <li class="list-inline-item"><a class="list-link" href="https://www.facebook.com/netavietnam"><i class="fa fa-facebook"></i></a></li>
-          <li class="list-inline-item"><a class="list-link" href="https://github.com/netavietnam"><i class="fa fa-github"></i></a></li>
-        </ul>
-      </div>
-      <div id="cal">
-        <div class="item"> <img src="./img/borua.png" alt=""></div>
+      <div class="container mt-5 mb-5">
+        <div class="row">
+          <div class="col">
+            <h3>Mã hóa</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <textarea class="form-control" id="code" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <textarea class="form-control" id="exp" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <ul class="list-inline">
+              <li class="list-inline-item"><a class="btn btn-danger" id="mahoa" href="javascript:void(0);">Mã hóa</a></li>
+              <li class="list-inline-item"><a class="btn btn-success" id="giaima" href="javascript:void(0);">Giải mã</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div id="slogan">Đào tạo CNTT trực tuyến</div>
     </main><!-- ////////////// End Main ////////////// -->

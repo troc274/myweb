@@ -6362,85 +6362,7 @@ main {
     text-transform: uppercase;
     font-size: 1.5rem;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.6); }
-  main #menu {
-    margin-top: 3rem;
-    margin-right: 2rem;
-    margin-bottom: 3rem;
-    margin-left: 2rem;
-    background: magenta;
-    padding: 3rem;
-    border: 5px solid rgba(48, 0, 110, 0.2);
-    text-transform: uppercase;
-    text-align: center; }
-    main #menu h1 {
-      color: #290369;
-      font-weight: 700;
-      font-size: 2rem;
-      position: relative;
-      margin-bottom: 2rem; }
-      main #menu h1:after {
-        display: block;
-        width: 20px;
-        height: 3px;
-        border-radius: 15px;
-        background: #b921b9;
-        position: absolute;
-        right: 0;
-        bottom: -5px; }
-    main #menu ul.list-unstyled .list-item {
-      margin-top: 0.25rem;
-      margin-right: 0;
-      margin-bottom: 0.25rem;
-      margin-left: 0; }
-      main #menu ul.list-unstyled .list-item .list-link {
-        color: #b921b9;
-        padding-top: 0.5rem;
-        padding-right: 0;
-        padding-bottom: 0.5rem;
-        padding-left: 0;
-        font-weight: 700;
-        font-size: 1.2rem;
-        text-decoration: none; }
-      main #menu ul.list-unstyled .list-item:hover .list-link {
-        color: #ffff00; }
-    main #menu ul.list-inline {
-      margin-top: 3rem; }
-      main #menu ul.list-inline .list-inline-item .list-link {
-        color: #e25ee2;
-        background: #b921b9;
-        width: 1.5rem;
-        height: 1.5rem;
-        display: flex;
-        border-radius: 3px;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none; }
-        main #menu ul.list-inline .list-inline-item .list-link i {
-          font-size: 0.85rem; }
-      main #menu ul.list-inline .list-inline-item:hover .list-link {
-        background: #ffff00;
-        color: #290369; }
-  main #cal {
-    text-align: center;
-    margin-top: 3rem;
-    margin-right: auto;
-    margin-bottom: 3rem;
-    margin-left: auto;
-    max-width: 540px; }
-    main #cal img {
-      max-width: 320px; }
   @media (min-width: 768px) {
-    main #menu {
-      position: absolute;
-      top: 30%;
-      right: 3%;
-      margin: 0;
-      padding: 0;
-      text-align: right;
-      border: 0;
-      background: none; }
-      main #menu h1:after {
-        content: ''; }
     main #logo {
       position: absolute;
       top: 2rem;
@@ -6453,47 +6375,6 @@ main {
       color: #290369;
       text-align: left;
       margin: 0;
-      text-shadow: none; }
-    main #cal {
-      position: absolute;
-      top: 25%;
-      left: 5%;
-      margin: 0; } }
-  @media (min-width: 992px) {
-    main #menu {
-      position: absolute;
-      top: 30%;
-      right: 8%; }
-    main #cal {
-      position: absolute;
-      top: 25%;
-      left: 10%; } }
-  @media (min-width: 1200px) {
-    main #menu {
-      position: absolute;
-      top: 30%;
-      right: 17%; }
-    main #cal {
-      position: absolute;
-      top: 25%;
-      left: 15%; } }
-  @media (min-width: 1366px) {
-    main #menu {
-      position: absolute;
-      top: 30%;
-      right: 20%; }
-    main #cal {
-      position: absolute;
-      top: 25%;
-      left: 23%; } }
-  @media (min-width: 1400px) {
-    main #menu {
-      position: absolute;
-      top: 35%;
-      right: 20%; }
-    main #cal {
-      position: absolute;
-      top: 30%;
-      left: 23%; } }
+      text-shadow: none; } }
 
 /*# sourceMappingURL=main.css.map */
