@@ -1,4 +1,8 @@
 $(document).ready(function () {
+	if(getUrlParameter('key')) {
+		$('#v-pills-profile-tab').trigger('click')
+		$('#cipherTextInput').val(getUrlParameter('key'))
+	}
 	// $("#dec").hide();
 	// $("#specs").hide();
 	$("#menuEnc").click(function () {
@@ -52,6 +56,23 @@ $(document).ready(function () {
 		$('#key').attr('type', 'text')
 	});
 });
+
+function getUrlParameter(param, dummyPath) {
+	var sPageURL = dummyPath || window.location.search.substring(1),
+		sURLVariables = sPageURL.replace(/%2C/g, ",").split(/[&||?]/),
+		res;
+	for (var i = 0; i < sURLVariables.length; i += 1) {
+		var paramName = sURLVariables[i],
+			sParameterName = (paramName || "").split("=");
+
+		if (sParameterName[0] === param) {
+			res = sParameterName[1];
+		}
+	}
+
+	return res;
+}
+
 
 function removeVietnam(str) {
 	var defaultDiacriticsRemovalMap = [
