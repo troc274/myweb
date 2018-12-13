@@ -32,9 +32,9 @@ $(function () {
 	}
 });
 $(document).ready(function () {
-	if (getUrlParameter('key')) {
+	if (getUrlParameter('key') !== 'undefined' && getUrlParameter('key').length > 0) {
 		$('#v-pills-profile-tab').trigger('click');
-		$('#cipherTextInput').val(getUrlParameter('key'));
+		$('#cipherTextInput').val(getUrlParameter('key').replace(/ /g, "+"));
 	}
 	// $("#dec").hide();
 	// $("#specs").hide();
@@ -92,7 +92,7 @@ $(document).ready(function () {
 
 function getUrlParameter(param, dummyPath) {
 	var sPageURL = dummyPath || window.location.search.substring(1),
-	    sURLVariables = sPageURL.replace(/%2C/g, ",").split(/[&||?]/),
+	    sURLVariables = sPageURL.replace(/%2C/g, ",").replace(/%3D/g, "@#").split(/[&||?]/),
 	    res;
 	for (var i = 0; i < sURLVariables.length; i += 1) {
 		var paramName = sURLVariables[i],
@@ -103,7 +103,7 @@ function getUrlParameter(param, dummyPath) {
 		}
 	}
 
-	return decodeURIComponent(res);
+	return decodeURIComponent(res).replace(/@#/g, "=");
 }
 
 function removeVietnam(str) {
