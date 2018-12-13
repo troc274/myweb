@@ -44,7 +44,7 @@ $('#pause').hide();
 setTimeout(function () {
 	$('#congrats').show();
 	fancyPopIn();
-	$('#buzzer').get(0).play();
+	// $('#buzzer').get(0).play();
 }, 500);
 setInterval(function () {
 	$('#congrats').show();
@@ -52,12 +52,12 @@ setInterval(function () {
 }, 10000);
 
 $('#player').on('click', function () {
-	$('#buzzer').get(0).pause();
+	$('#buzzer').get(0).play();
 	$(this).hide();
 	$('#pause').show();
 });
 $('#pause').on('click', function () {
-	$('#buzzer').get(0).play();
+	$('#buzzer').get(0).pause();
 	$(this).hide();
 	$('#player').show();
 });

@@ -11,7 +11,7 @@ $('#pause').hide()
 setTimeout(() => {
 	$('#congrats').show()
 	fancyPopIn()
-	$('#buzzer').get(0).play();
+	// $('#buzzer').get(0).play();
 }, 500);
 setInterval(() => {
 	$('#congrats').show()
@@ -20,12 +20,12 @@ setInterval(() => {
 }, 10000);
 
 $('#player').on('click', function(){
-	$('#buzzer').get(0).pause();
+	$('#buzzer').get(0).play();
 	$(this).hide()
 	$('#pause').show()
 })
 $('#pause').on('click', function(){
-	$('#buzzer').get(0).play();
+	$('#buzzer').get(0).pause();
 	$(this).hide()
 	$('#player').show()
 })

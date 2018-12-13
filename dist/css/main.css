@@ -7833,7 +7833,11 @@ main {
     border: 3px solid #ff0;
     cursor: pointer; }
   main #buzzer {
-    display: none; }
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    right: 0; }
   main #congrats {
     position: fixed;
     top: 50%;
@@ -7890,6 +7894,9 @@ main {
         -ms-opacity: 0;
         -o-opacity: 0;
         opacity: 0; }
+  @media (min-width: 576px) {
+    main .noel #slogan {
+      font-size: 1.5rem; } }
   @media (min-width: 768px) {
     main .noel #logo {
       position: fixed;
@@ -7897,4 +7904,7 @@ main {
       left: 2rem;
       padding-top: 0; }
     main .noel #slogan {
-      font-size: 1.5rem; } }
+      font-size: 2rem; } }
+  @media (min-width: 1200px) {
+    main .noel #slogan {
+      font-size: 2.5rem; } }

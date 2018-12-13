@@ -30,7 +30,9 @@ main
 		cursor: pointer
 
 	#buzzer
-		display: none
+		opacity: 0
+		z-index: -1
+		+pos(fix, 0 0 null null)
 	#congrats
 		+pos(fix, 50% null null 50%)
 		height: 200px
@@ -72,13 +74,21 @@ main
 			img 
 				max-width: 100%
 				+opacity(0)
+	+media-breakpoint-up(sm)
+		.noel
+			#slogan 
+				+fz(1.5rem)
 	+media-breakpoint-up(md)
 		.noel
 			#logo
 				+pos(fix, 2rem null null 2rem)
 				padding-top: 0
 			#slogan 
-				+fz(1.5rem)
+				+fz(2rem)
+	+media-breakpoint-up(xl)
+		.noel
+			#slogan 
+				+fz(2.5rem)
 // 	@media (min-width: 1366px)
 // 		#menu 
 // 			+pos(abs,30% 20% null null)
