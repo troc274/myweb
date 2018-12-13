@@ -70,7 +70,7 @@ function getUrlParameter(param, dummyPath) {
 		}
 	}
 
-	return res;
+	return decodeURIComponent(res);
 }
 
 
