@@ -9,25 +9,58 @@ block variables
 //- Phần khai báo body
 block body
 	//- Bạn viết code vào đây nhớ là phải mở đầu bằng section ở mỗi khối
-	#logo 
-		img(src="./img/logo.png", alt="NETA Vietnam", srcset="")
 	
 	.container.mt-5.mb-5
+		.text-center 
+			.row
+				.col  
+					h1 NETA Vietnam
+					p.lead Nếu dùng tiếng việt ko dấu vì tại hạ chưa viết phần check dấu tiếng Việt
+		hr 
 		.row
-			.col
-				h3 Mã hóa
-		.row
-			.col
-				textarea#code.form-control(cols="30", rows="10")
-		.row.mt-3
-			.col
-				textarea#exp.form-control(cols="30", rows="10")
-		.row.mt-3
-			.col
-				ul.list-inline
-					li.list-inline-item
-						a.btn.btn-danger#mahoa(href="javascript:void(0);") Mã hóa
-					li.list-inline-item
-						a.btn.btn-success#giaima(href="javascript:void(0);") Giải mã
+			.col-sm-3
+				.nav.flex-column.nav-pills(id="v-pills-tab" role="tablist" aria-orientation="vertical")
+					a.nav-link#v-pills-home-tab.active(data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true") Mã hóa
+					a.nav-link#v-pills-profile-tab(data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false") Giải mã
+
+				.footer#status.mt-2
+			.col-sm-9
+				.tab-content(id="v-pills-tabContent")
+					.tab-pane.fade.show.active(id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab")
+						#enc
+							h2 Nội dung
+							.form-group
+								textarea.form-control#clearTextInput(rows="10", placeholder="Nhập con mẹ gì đó")
+							h2 Khóa
+							.form-group
+								.input-group
+									input.form-control#key(type="password" placeholder="Mật khẩu mã hóa")
+									.input-group-append
+										button.btn.btn-secondary#loimat 
+											i.fa.fa-eye
+									.input-group-append
+										button.btn.btn-danger#encrypt Mã hóa
+							h2 Kết quả
+							textarea.form-control#cipherTextOutput(disabled="")
+
+					.tab-pane.fade(id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab")
+						#dec
+							h2 Nội dung
+							.form-group
+								textarea.form-control#cipherTextInput(rows="10", placeholder="Nhập con mẹ gì đó")
+							h2 Khóa
+							.form-group
+								.input-group
+									input.form-control#key2(type="password" placeholder="Mật khẩu mã hóa")
+									.input-group-append
+										button.btn.btn-secondary#mumat 
+											i.fa.fa-eye
+									.input-group-append
+										button.btn.btn-success#decrypt Giải mã
+							h2 Kết quả
+							textarea.form-control#clearTextOutput(disabled="")
 			
-	#slogan Đào tạo CNTT trực tuyến
+		#slogan.text-center 
+			.mt-5.mb-2
+				.row
+					.col Đào tạo CNTT trực tuyến. By Bao Nguyen

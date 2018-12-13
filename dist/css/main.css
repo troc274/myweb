@@ -6342,39 +6342,9 @@ main {
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  background: url("../img/bg.jpg") top center no-repeat;
   background-size: cover;
   position: relative; }
-  main #logo {
-    text-align: center;
-    padding-top: 2rem; }
-    main #logo img {
-      max-width: 180px; }
-  main #slogan {
-    margin-top: 3rem;
-    margin-right: 0;
-    margin-bottom: 3rem;
-    margin-left: 0;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.6); }
-  @media (min-width: 768px) {
-    main #logo {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      padding-top: 0; }
-    main #slogan {
-      position: absolute;
-      bottom: 2rem;
-      left: 2rem;
-      color: #290369;
-      text-align: left;
-      margin: 0;
-      text-shadow: none; } }
+  main .nav-link {
+    background: #f7f7f7; }
 
 /*# sourceMappingURL=main.css.map */
