@@ -73,6 +73,64 @@ function getUrlParameter(param, dummyPath) {
 	return decodeURIComponent(res).replace(/@#/g, "=");
 }
 
+document.getElementById("copyClip").addEventListener("click", function() {
+    copyToClipboard(document.getElementById("cipherTextOutput"));
+});
+document.getElementById("copyClip2").addEventListener("click", function() {
+    copyToClipboard(document.getElementById("clearTextOutput"));
+});
+
+function copyToClipboard(elem) {
+	// create hidden text element, if it doesn't already exist
+  var targetId = "_hiddenCopyText_";
+  var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+  var origSelectionStart, origSelectionEnd;
+  if (isInput) {
+	  // can just use the original source element for the selection and copy
+	  target = elem;
+	  origSelectionStart = elem.selectionStart;
+	  origSelectionEnd = elem.selectionEnd;
+  } else {
+	  // must use a temporary form element for the selection and copy
+	  target = document.getElementById(targetId);
+	  if (!target) {
+		  var target = document.createElement("textarea");
+		  target.style.position = "absolute";
+		  target.style.left = "-9999px";
+		  target.style.top = "0";
+		  target.id = targetId;
+		  document.body.appendChild(target);
+	  }
+	  target.textContent = elem.textContent;
+  }
+  // select the content
+  var currentFocus = document.activeElement;
+  target.focus();
+  target.setSelectionRange(0, target.value.length);
+  
+  // copy the selection
+  var succeed;
+  try {
+		succeed = document.execCommand("copy");
+  } catch(e) {
+	  succeed = false;
+  }
+  // restore original focus
+  if (currentFocus && typeof currentFocus.focus === "function") {
+	  currentFocus.focus();
+  }
+  
+  if (isInput) {
+	  // restore prior selection
+	  elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+  } else {
+	  // clear temporary content
+	  target.textContent = "";
+  }
+  alert('Đã copy')
+  return succeed;
+}
+
 
 function removeVietnam(str) {
 	var defaultDiacriticsRemovalMap = [
@@ -854,8 +912,8 @@ Utilities.xorBytes = function (a, b) {
 //Status
 var Status = {};
 Status.set = function (Status) {
-	$('#status').text(Status);
+	$('#status').html('<div class="alert alert-primary mb-3 mt-3">'+Status+'</div>');
 }
 Status.clear = function () {
-	$('#status').text('');
+	$('#status').html('');
 }
