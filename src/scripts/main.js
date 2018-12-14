@@ -2,11 +2,12 @@ var particles = ['.blob', '.star'],
 	$congratsSection = $('#congrats'),
 	$title = $('#title');
 init({
-	numberOfStars: 100,
+	numberOfStars: 300,
 	numberOfBlobs: 0
 });
 
 $('#pause').hide()
+
 
 setTimeout(() => {
 	$('#congrats').show()
@@ -20,12 +21,12 @@ setInterval(() => {
 	newQuote()
 }, 10000);
 
-$('#player').on('click', function(){
+$('#player').on('click', function () {
 	$('#buzzer').get(0).play();
 	$(this).hide()
 	$('#pause').show()
 })
-$('#pause').on('click', function(){
+$('#pause').on('click', function () {
 	$('#buzzer').get(0).pause();
 	$(this).hide()
 	$('#player').show()
@@ -77,7 +78,7 @@ function animateParticles(selector) {
 				$element.css('display', 'none');
 				setTimeout(function () {
 					$('#congrats').hide()
-				}, 2000);
+				}, 4000);
 
 			}
 		});
@@ -115,12 +116,48 @@ function init(properties) {
 
 
 function newQuote() {
-    var quotes = ['NETA Vietnam', 'Học trực tuyến cùng giảng viên', 'Đào tạo CNTT trực tuyến', 'Hãy là một IT đam mê', 'Những khóa học độc đáo và chất lượng', 'Chúc bạn một giáng sinh an lành', 'Chúc mừng năm mới', 'Mừng Chúa Giáng Sinh'];
 
-    var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+	var quotes = []
 
-    $('.show-quote').fadeOut(300, function() {
-      $(this).text(randomQuote).fadeIn(300)
-    });
+	if (getUrlParameter('msg') !== 'undefined' && getUrlParameter('msg')) {
+		var n = getUrlParameter('msg').includes(";");
+		if(n) {
+			let hehe = decodeURI(getUrlParameter('msg')).split(';')
+			for (let key in hehe) {
+				if (hehe.hasOwnProperty(key)) {
+					let element = hehe[key];
+					quotes.push(element)
+				}
+			}
+		} else {
+			quotes.push(decodeURI(getUrlParameter('msg')))
+		}
+		
+	} else {
+		quotes = ['NETA Vietnam', 'Học trực tuyến cùng giảng viên', 'Đào tạo CNTT trực tuyến', 'Hãy là một IT đam mê', 'Những khóa học độc đáo và chất lượng', 'Chúc bạn một giáng sinh an lành', 'Chúc mừng năm mới', 'Mừng Chúa Giáng Sinh'];
+	}
 
-  }
+	var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+	$('.show-quote').fadeOut(300, function () {
+		$(this).text(randomQuote).fadeIn(300)
+	});
+
+}
+
+
+function getUrlParameter(param, dummyPath) {
+	var sPageURL = dummyPath || window.location.search.substring(1),
+		sURLVariables = sPageURL.replace(/%2C/g, ",").replace(/%3B/g, ";").split(/[&||?]/),
+		res;
+	for (var i = 0; i < sURLVariables.length; i += 1) {
+		var paramName = sURLVariables[i],
+			sParameterName = (paramName || "").split("=");
+
+		if (sParameterName[0] === param) {
+			res = sParameterName[1];
+		}
+	}
+
+	return res;
+}

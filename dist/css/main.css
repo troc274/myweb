@@ -7851,6 +7851,8 @@ main {
       color: #ff0; }
       main #congrats .particle:nth-child(odd) {
         color: #fff; }
+      main #congrats .particle:nth-child(3n+1) {
+        color: red; }
   main .noel {
     padding-bottom: 6rem; }
     main .noel #logo {
