@@ -6409,6 +6409,24 @@ main .box {
 main #logo {
   padding: 1rem;
   text-align: center; }
+  main #logo img {
+    max-width: 200px; }
+
+main #slogan {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 3rem;
+  margin-right: 0;
+  margin-bottom: 3rem;
+  margin-left: 0;
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-align: center;
+  padding-top: 0;
+  padding-right: 2rem;
+  padding-bottom: 0;
+  padding-left: 2rem; }
 
 main #menu {
   text-align: center;
@@ -6434,11 +6452,16 @@ main #cnt {
     margin-left: auto; }
 
 @media (min-width: 768px) {
+  main #slogan {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; }
   main #cnt {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(calc(-50% - 250px)) translateY(-45%); }
+    transform: translateX(calc(-50% - 200px)) translateY(-45%); }
     main #cnt .c-0 {
       position: absolute;
       top: 3rem;
@@ -6488,5 +6511,12 @@ main #cnt {
           bottom: -13px;
           left: 50%;
           transform: translateX(-50%); } }
+
+@media (min-width: 992px) {
+  main #cnt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(calc(-50% - 150px)) translateY(-45%); } }
 
 /*# sourceMappingURL=main.css.map */
