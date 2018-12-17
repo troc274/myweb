@@ -88,8 +88,9 @@ main
 	
 	+media-breakpoint-up(md)
 		#slogan 
-			+pos(abs,null null 0 0)
+			+pos(abs,null null .5rem 0)
 			width: 100%
+			+mar(0)
 		#cnt
 			+pos(abs,50% null null 50%)
 			transform: translateX(calc(-50% - 200px)) translateY(-45%)
@@ -134,3 +135,8 @@ main
 		#cnt
 			+pos(abs,50% null null 50%)
 			transform: translateX(calc(-50% - 150px)) translateY(-45%)
+.masked 
+	-webkit-mask: url(../img/mask.svg) center center no-repeat
+	mask: url(../img/mask.svg) center center no-repeat
+	-webkit-mask-size: 260px 260px
+	mask-size: 260px 260px
