@@ -1,67 +1,136 @@
-/////////////////////////////////
-// Phần Slider
-/////////////////////////////////
-.home-slider
-	.owl-carousel
-		// Phần Slider
-		.item
-			position: relative
-			.title
-				+pad(2rem 0)
-				height: 100%
-				width: 100%
-				display: flex
-				align-items: center
-			+media-breakpoint-up(md)
-				.title
-					+pos(abs, 0 null null 0)
-					color: $whites
-					+text-shadow()
-					h2
-						+fz(3rem)
-					p 
-						+fz(1.5rem)
-						+lh(2rem)
-		// Phần Control
-		.owl-dots
-			margin-bottom: 2rem
-/////////////////////////////////
-// Phần News
-/////////////////////////////////
+.tamgiac 
+	width: 0
+	height: 0
+	border-left: 120px solid transparent
+	border-right: 120px solid transparent
+	position: relative
+	&.tamgiac-up
+		border-bottom: 240px solid red
+		&.tamgiac-cyan
+			border-bottom-color: rgba(0,255,255,.5)
+	&.tamgiac-down
+		border-top: 240px solid red
+		margin-top: 2px !important
+		&.tamgiac-cyan
+			border-top-color: rgba(0,255,255,.75)
+		&.tamgiac-trang
+			border-top-color: rgba(255,255,255,.15)
+		&.tamgiac-den
+			border-top-color: rgba(0,0,0,.2)
 
-.home-news
-	.item 
-		figure
-			.blockimg
-				+bor-rad(10px)
+.tamgiac-hinh 
+	height: 240px
+	width: 240px
+	background: #000
+	background-size: cover
+	background-position: center center
+	&.tamgiac-hinh-up
+		-webkit-clip-path: polygon(50% 0, 0% 100%, 100% 100%)
+		clip-path: polygon(50% 0, 0% 100%, 100% 100%)
+	&.tamgiac-hinh-down
+		-webkit-clip-path: polygon(50% 100%, 0 0, 100% 0)
+		clip-path: polygon(50% 100%, 0 0, 100% 0)
+main 
+	.box
+		position: relative
+		height: 240px
+		width: 240px
+		+mar(0 auto)
+		.title
+			+pad(2rem 4rem)
+			color: #fff 
+			p 
+				line-height: 1.1rem
+				max-height: 3.3rem
 				overflow: hidden
-				img
-					width: 100%
-			figcaption 
-				margin-top: 1rem
-				h3 
-					+fz(1.1rem)
-					margin-bottom: 0
-				time 
-					+fz(.85rem)
-					color: darken($whites,30%)
-				p 
-					margin-top: .5rem
-					color: darken($whites,50%)
-/////////////////////////////////
-// Phần News
-/////////////////////////////////
-
-.home-clients
-	.owl-carousel
-		.item 
-			+pad(.5rem)
-		// Phần Control
-		.owl-nav
-			margin-bottom: 2rem
-			button 
-				i 
-					display: block
-					width: 2rem
-					height: 2rem
-					+lh(2rem)
+			h3 
+				+fz(1.2rem)
+				+fw(900)
+		.tamgiac-down
+			~ .title
+				+pos(abs, 0 null null 0)
+		.tamgiac-up
+			~ .title
+				+pos(abs, null null 0 0)
+	#logo
+		+pad(1rem)
+		text-align: center
+		img
+			max-width: 160px
+	#slogan 
+		text-shadow: 1px 1px rgba(0,0,0,.3)
+		text-transform: uppercase
+		color: #fff
+		+mar(3rem 0)
+		+fz(1.2rem)
+		+fw(900)
+		text-align: center
+		+pad(0 2rem)
+		
+	#menu
+		text-align: center
+		+fw(700)
+		.list-inline-item 
+			a
+				color: rgba(255,255,255,.5)
+				text-decoration: none
+				text-transform: uppercase
+			&:hover, &.active 
+				a 
+					color: #fff
+	#cnt
+		text-align: center
+		+pad(3rem 0)
+		position: relative
+		.tamgiac, .tamgiac-hinh
+			+mar(0 auto)
+		
+	
+	+media-breakpoint-up(md)
+		#slogan 
+			+pos(abs,null null 0 0)
+			width: 100%
+		#cnt
+			+pos(abs,50% null null 50%)
+			transform: translateX(calc(-50% - 200px)) translateY(-45%)
+			.c-0
+				+pos(abs, 3rem null null 246px)
+			.c-4
+				+pos(abs, calc(3rem + 240px) null null 366px)
+			.c-1
+				+pos(abs, 3rem null null 123px)
+				.tamgiac
+					&.tamgiac-down
+						margin-top: 0!important
+			.c-2
+				+pos(abs, 3rem null null 369px)
+				.tamgiac
+					&.tamgiac-down
+						margin-top: 0!important
+		#logo
+			+pad(0)
+			+pos(abs, 1rem null null 2rem)
+		#menu
+			+pad(0)
+			+pos(abs, 2.5rem 3rem null null)
+			text-align: right
+			.list-inline-item 
+				+mar(0 1rem)
+				&:hover, &.active 
+					a 
+						position: relative
+						&:after 
+							display: block
+							content: ''
+							background: url(../img/hover.png) center center no-repeat 
+							background-size: contain
+							height: 20px
+							width: 120px
+							+pos(abs, null null -13px 50%)
+							transform: translateX(-50%)
+						
+		
+	+media-breakpoint-up(lg)
+		#cnt
+			+pos(abs,50% null null 50%)
+			transform: translateX(calc(-50% - 150px)) translateY(-45%)
